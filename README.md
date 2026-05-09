@@ -1,4 +1,4 @@
-Expense Tracker
+Expense Tracker 
 
 A simple and modern expense tracker built with HTML, CSS, and JavaScript.
 
