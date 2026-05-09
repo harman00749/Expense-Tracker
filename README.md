@@ -1,6 +1,6 @@
-Expense Tracker 
+Cash Flow Tracker 
 
-A simple and modern expense tracker built with HTML, CSS, and JavaScript.
+A simple and modern cash flow tracker built with HTML, CSS, and JavaScript.
 
 Features
 
