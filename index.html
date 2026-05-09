@@ -1,0 +1,140 @@
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cash Flow Tracker</title>
+  <link rel="stylesheet" href=style.css>
+</head>
+<body>
+  <main class="app-shell">
+    <div class="glow glow-one"></div>
+    <div class="glow glow-two"></div>
+
+    <section class="hero">
+      <div class="hero-copy">
+        <h1>Expense Tracker</h1>
+      </div>
+
+      <form id="salaryForm" class="panel panel-highlight">
+        <div class="panel-heading">
+          <span class="panel-tag">Income</span>
+          <h2>Set monthly salary</h2>
+        </div>
+
+        <label for="salaryInput" class="field-label">Salary amount</label>
+        <div class="money-input">
+          <span>₹</span>
+          <input type="number" id="salaryInput" placeholder="85000" min="0">
+        </div>
+
+        <button type="submit" class="primary-btn">Update Salary</button>
+      </form>
+    </section>
+
+    <section class="summary-grid">
+      <article class="stat-card">
+        <p class="stat-label">Salary</p>
+        <h3 id="salaryDisplay">₹0</h3>
+        <span class="stat-note">Your available income base</span>
+      </article>
+
+      <article class="stat-card stat-card-accent">
+        <p class="stat-label">Spent</p>
+        <h3 id="expenseDisplay">₹0</h3>
+        <span class="stat-note">Total expenses added</span>
+      </article>
+
+      <article class="stat-card" id="balanceCard">
+        <p class="stat-label">Balance</p>
+        <h3 id="balanceDisplay">₹0</h3>
+        <span class="stat-note" id="balanceNote">Still available to use</span>
+      </article>
+    </section>
+
+    <section class="dashboard">
+      <form id="expenseForm" class="panel panel-form">
+        <div class="panel-heading">
+          <span class="panel-tag">Expense log</span>
+          <h2>Add a new expense</h2>
+        </div>
+
+        <div class="field-grid">
+          <div class="field">
+            <label for="expenseName" class="field-label">Expense name</label>
+            <input type="text" id="expenseName" placeholder="Groceries">
+          </div>
+
+          <div class="field">
+            <label for="expenseAmount" class="field-label">Amount</label>
+            <div class="money-input">
+              <span>₹</span>
+              <input type="number" id="expenseAmount" placeholder="2500" min="0">
+            </div>
+          </div>
+        </div>
+
+        <button type="submit" class="secondary-btn">Add Expense</button>
+        <p class="feedback" id="errorMsg" aria-live="polite"></p>
+      </form>
+
+      <section class="panel panel-chart">
+        <div class="panel-heading">
+          <span class="panel-tag">Visual split</span>
+          <h2>Budget breakdown</h2>
+        </div>
+
+        <div class="chart-area">
+          <div class="chart-ring" id="expenseChart" role="img" aria-label="Expense and balance chart">
+            <div class="chart-ring__inner">
+              <strong id="chartPercent">0%</strong>
+              <span>used</span>
+            </div>
+          </div>
+
+          <div class="chart-meta">
+            <div class="legend-row">
+              <span class="legend-dot legend-dot-expense"></span>
+              <div>
+                <p>Expenses</p>
+                <strong id="chartExpenseValue">₹0</strong>
+              </div>
+            </div>
+
+            <div class="legend-row">
+              <span class="legend-dot legend-dot-balance"></span>
+              <div>
+                <p>Balance</p>
+                <strong id="chartBalanceValue">₹0</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="progress-copy">
+          <div class="progress-header">
+            <span>Spending pace</span>
+            <strong id="progressLabel">No salary saved yet</strong>
+          </div>
+          <div class="progress-track">
+            <span class="progress-fill" id="progressFill"></span>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel panel-list">
+        <div class="panel-heading panel-heading-split">
+          <div>
+            <span class="panel-tag">Recent entries</span>
+            <h2>Expense timeline</h2>
+          </div>
+          <span class="list-count" id="expenseCount">0 items</span>
+        </div>
+
+        <ul id="expenseList" class="expense-list"></ul>
+      </section>
+    </section>
+  </main>
+
+  <script src=script.js></script>
+</body>
+</html>
